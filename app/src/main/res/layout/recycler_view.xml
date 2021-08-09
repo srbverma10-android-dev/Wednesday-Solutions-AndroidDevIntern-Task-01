@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="resultItem"
+            type="com.example.wednesdaysolutioninternshiptask.Result" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:padding="8dp"
+
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_margin="8dp"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/art_work_100"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:loadImage="@{resultItem.artworkUrl100}"
+                    android:contentDescription="@string/img_desc" />
+
+                <TextView
+                    android:id="@+id/track_name"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:maxLines="1"
+
+                    android:ellipsize="end"
+
+                    android:background="#803c4340"
+
+                    android:textColor="@color/white"
+
+                    android:textAlignment="center"
+
+                    android:padding="2dp"
+
+                    android:text="@{resultItem.trackName}"
+
+                    app:layout_constraintStart_toStartOf="@id/art_work_100"
+                    app:layout_constraintEnd_toEndOf="@id/art_work_100"
+
+                    app:layout_constraintBottom_toTopOf="@+id/artistName"
+                    />
+
+                <TextView
+                    android:id="@+id/artistName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:maxLines="1"
+
+                    android:textAlignment="center"
+
+                    android:ellipsize="end"
+
+                    android:background="#803c4340"
+
+                    android:textColor="@color/white"
+
+                    android:padding="2dp"
+
+                    android:text="@{resultItem.artistName}"
+
+                    app:layout_constraintStart_toStartOf="@id/art_work_100"
+                    app:layout_constraintEnd_toEndOf="@id/art_work_100"
+
+                    app:layout_constraintBottom_toBottomOf="@id/art_work_100"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
+
+
